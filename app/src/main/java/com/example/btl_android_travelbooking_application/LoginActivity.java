@@ -28,11 +28,7 @@ public class LoginActivity extends AppCompatActivity {
                 String password = editTextPassword.getText().toString();
 
                 if (username.equals("admin") && password.equals("admin")) {
-<<<<<<< HEAD
-                    Intent intent1 = new Intent(LoginActivity.this, MainScreenActivity.class);
-=======
                     Intent intent1 = new Intent(LoginActivity.this, HomeActivity.class);
->>>>>>> 5c953be (update)
                     startActivity(intent1);
                 } else if (username.equals("") && password.equals("")) {
                     AlertDialog.Builder builder =  new AlertDialog.Builder(LoginActivity.this);
