@@ -5,20 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+<<<<<<< HEAD
     tools:context=".MainActivity"
+=======
+>>>>>>> 5c953be (update)
     >
 
     <LinearLayout
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:layout_height="wrap_content"
+=======
+        android:layout_height="match_parent"
+>>>>>>> 5c953be (update)
         android:layout_centerHorizontal="true"
         android:background="#7DD8E4"
         android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
+<<<<<<< HEAD
             android:layout_width="637dp"
             android:layout_height="546dp"
+=======
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+>>>>>>> 5c953be (update)
             android:src="@drawable/imgstart" />
 
         <TextView

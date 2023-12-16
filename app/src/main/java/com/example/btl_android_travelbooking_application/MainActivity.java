@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5c953be (update)
 package com.example.btl_android_travelbooking_application;
 
 import androidx.appcompat.app.AppCompatActivity;
