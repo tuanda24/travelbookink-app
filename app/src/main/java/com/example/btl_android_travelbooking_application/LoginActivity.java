@@ -19,8 +19,10 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.login_layout);
         EditText editTextUsername = findViewById(R.id.editTextUsername);
         EditText editTextPassword = findViewById(R.id.editTextPassword);
+//        EditText editTextQMK = findViewById(R.id.editTextQMK);
         Button buttonLogin = findViewById(R.id.buttonLogin);
         Button buttonClose =findViewById(R.id.buttonClose);
+
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -28,20 +30,18 @@ public class LoginActivity extends AppCompatActivity {
                 String password = editTextPassword.getText().toString();
 
                 if (username.equals("admin") && password.equals("admin")) {
-                    Intent intent1 = new Intent(LoginActivity.this, MainScreenActivity.class);
+//                    AlertDialog.Builder builder =  new AlertDialog.Builder(MainActivity.this);
+//                    builder.setTitle("Login Access");
+//                    builder.setPositiveButton("Ok!", new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialogInterface, int i) {
+//                            dialogInterface.dismiss();
+//                        }
+//                    });
+//                    AlertDialog dialog = builder.create();
+//                    dialog.show();
+                    Intent intent1 = new Intent(LoginActivity.this, HomeScreenActivity.class);
                     startActivity(intent1);
-                } else if (username.equals("") && password.equals("")) {
-                    AlertDialog.Builder builder =  new AlertDialog.Builder(LoginActivity.this);
-                    builder.setTitle("Login Fail");
-                    builder.setMessage("Please enter your user and password");
-                    builder.setPositiveButton("Ok!", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            dialogInterface.dismiss();
-                        }
-                    });
-                    AlertDialog dialog = builder.create();
-                    dialog.show();
                 } else {
                     AlertDialog.Builder builder =  new AlertDialog.Builder(LoginActivity.this);
                     builder.setTitle("Login Fail");
@@ -81,7 +81,6 @@ public class LoginActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
-
 //        EditText editTextQMK = findViewById(R.id.editTextQMK);
 //        editTextQMK.setOnClickListener(new View.OnClickListener() {
 //            public void onClick(View view) {
