@@ -1,41 +1,49 @@
 package com.example.btl_android_travelbooking_application;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.os.RecoverySystem;
 import android.view.View;
 import android.widget.Button;
 
-public class HomeScreenActivity extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class HomeScreenActivity extends AppCompatActivity {
+    private RecyclerView.Adapter adapterPopular,adapterCat ;
+    private RecyclerView recyclerViewPopular,recyclerViewCategory;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
-//        Button btnSub1 = findViewById(R.id.app_name1);
-//        Button btnSub2=findViewById(R.id.app_name2);
-//        Button btnCls=findViewById(R.id.cls_app);
-//        btnCls.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                finish();
-//            }
-//        });
+//        initRecyclerView();
+    }
+    private void initRecyclerView(){
+        ArrayList<PopularDomain> items = new ArrayList<>();
+        items.add(new PopularDomain("a","Miami0","áđâsdsdfádf56ád5f416á54df654á64df654ádf64á6d4f",2,true,4.8,"pic1",true,1000));
+        items.add(new PopularDomain("b","Miami1","áđâsdsdfádf56ád5f416á54df654á64df654ádf64á6d4f",2,true,4.8,"pic2",true,1000));
+        items.add(new PopularDomain("c","Miami2","áđâsdsdfádf56ád5f416á54df654á64df654ádf64á6d4f",2,true,4.8,"pic3",true,1000));
+        items.add(new PopularDomain("d","Miami3","áđâsdsdfádf56ád5f416á54df654á64df654ádf64á6d4f",2,true,4.8,"pic4",true,1000));
+        items.add(new PopularDomain("e","Miami4","áđâsdsdfádf56ád5f416á54df654á64df654ádf64á6d4f",2,true,4.8,"pic5",true,1000));
+        items.add(new PopularDomain("g","Miami5","áđâsdsdfádf56ád5f416á54df654á64df654ádf64á6d4f",2,true,4.8,"pic2",true,1000));
 
-//        btnSub1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent1 = new Intent(MainScreenActivity.this, SubActivity1.class);
-//                startActivity(intent1);
-//            }
-//        });
-//
-//        btnSub2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent2 = new Intent(MainScreenActivity.this, SubActivity1.class);
-//                startActivity(intent2);
-//            }
-//        });
+        recyclerViewPopular = findViewById(R.id.view_pop);
+        recyclerViewPopular.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+        adapterPopular = new PopularAdapter(items);
+        recyclerViewPopular.setAdapter(adapterPopular);
+
+        ArrayList<CategoryDomain> catslist = new ArrayList<>();
+        catslist.add(new CategoryDomain("1","cat1"));
+        catslist.add(new CategoryDomain("2","cat2"));
+        catslist.add(new CategoryDomain("3","cat3"));
+        catslist.add(new CategoryDomain("4","cat4"));
+        catslist.add(new CategoryDomain("5","cat5"));
+
+        recyclerViewCategory = findViewById(R.id.view_cat);
+        recyclerViewCategory.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        adapterCat = new CategoryAdapter(catslist);
+        recyclerViewCategory.setAdapter(adapterCat);
     }
 }
