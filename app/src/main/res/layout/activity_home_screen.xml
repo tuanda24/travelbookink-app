@@ -36,7 +36,7 @@
                         android:layout_height="wrap_content"
                         tools:layout_editor_absoluteX="16dp"
                         tools:layout_editor_absoluteY="16dp"
-                        tools:src="@drawable/profile" />
+                        tools:srcCompat="@drawable/profile" />
 
                     <TextView
                         android:id="@+id/textView2"
@@ -137,7 +137,6 @@
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/view_pop"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:clipToPadding="false"
@@ -171,7 +170,6 @@
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/view_cat"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:clipToPadding="false"
